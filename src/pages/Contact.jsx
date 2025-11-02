@@ -3,28 +3,70 @@ import { Link } from 'react-router-dom'
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
+  const navigation = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Contact', href: '/contact' },
+  ]
+
   return (
     <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen">
-      <header className="bg-white/90 backdrop-blur-md shadow-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 hover:shadow-xl">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-start">
-          <Link
-            to="/"
-            className="flex items-center space-x-3 transform hover:scale-105 transition-transform duration-300"
-          >
+      {/* Header with Navigation */}
+      <header className="bg-white shadow-sm fixed top-0 left-0 w-full z-20">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
             <img
-              src="/logo.png"
+              src="logo.png"
               alt="Hosur Infratech Logo"
-              className="h-12 w-12 object-contain border-2 border-primary rounded-full p-1 shadow-md"
+              className="h-12 w-12 object-contain border-2 border-primary rounded-full p-1"
             />
-            <span className="text-xl font-bold text-primary">
+            <span className="text-xl font-bold text-primary hidden sm:inline">
               Hosur Infratech
             </span>
-          </Link>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <a
+              href="#"
+              className="text-gray-800 hover:text-primary font-medium transition duration-300"
+            >
+              Services
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-primary font-medium transition duration-300"
+            >
+              Products
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-primary font-medium transition duration-300"
+            >
+              Projects
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-primary font-medium transition duration-300"
+            >
+              About
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-primary font-medium transition duration-300"
+            >
+              Contact
+            </a>
+          </nav>
+          <button className="hidden md:block bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium transition duration-300">
+            Get Quote
+          </button>
         </div>
       </header>
 
@@ -120,7 +162,7 @@ const Contact = () => {
             {/* Quick Action Cards */}
             <div className="grid grid-cols-2 gap-4">
               <a
-                href="tel:+91 9025076680"
+                href="tel:+919025076680"
                 className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-xl text-center transform hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
               >
                 <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -238,13 +280,13 @@ const Contact = () => {
               href="tel:+919025076680"
               className="bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg transform hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
             >
-              📞 Call Now - +91 9025725618
+              📞 Call Now - +91 9025076680
             </a>
             <a
-              href="tel:+919025076680"
+              href="tel:+919037839939"
               className="bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg transform hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
             >
-              📞 Alternate - +91 9025076680
+              📞 Alternate - +91 9037839939
             </a>
           </div>
         </div>
